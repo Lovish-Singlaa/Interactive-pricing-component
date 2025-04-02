@@ -76,7 +76,7 @@ export default function Home() {
             <li className="flex gap-4"><Image src="/icon-check.svg" alt="icon-check" width={17} height={1}></Image><p>100% data ownership</p></li>
             <li className="flex gap-4"><Image src="/icon-check.svg" alt="icon-check" width={17} height={1}></Image><p>Email reports</p></li>
           </ul>
-          <Button className={`rounded-full px-6 ${isDarkMode ? "text-black bg-[hsl(174,86%,45%)]" : "text-[hsl(226,100%,87%)] bg-[hsl(227,35%,25%)]"}`}>Start my trial</Button>
+          <Button className={`rounded-full px-6 cursor-pointer ${isDarkMode ? "text-black bg-[hsl(174,86%,45%)] hover:bg-[hsl(174,75%,50%)]" : "text-[hsl(226,100%,87%)] bg-[hsl(227,35%,25%)] hover:bg-[hsl(227,60%,25%)]"}`}>Start my trial</Button>
         </div>
       </div>
     </div>
