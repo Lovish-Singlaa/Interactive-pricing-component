@@ -29,7 +29,7 @@ export default function Home() {
     <div className={`relative h-screen font-semibold text-[15px] ${isDarkMode && "bg-gray-900"}`}>
       <Button onClick={()=>setIsDarkMode(!isDarkMode)} className={`rounded-full absolute right-0 m-2 z-10 ${isDarkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`}>{isDarkMode ? <Moon/> : <Sun/>}</Button>
       <div style={{ backgroundImage: !isDarkMode ? "url(/bg-pattern.svg)" : "" }} className={`absolute bg-cover md:bg-center w-full md:h-[50vh] h-[50vh] z-0`}></div>
-      <div style={{ backgroundImage: "url(/pattern-circles.svg)" }} className={`absolute bg-cover w-[13vw] h-[26vh] left-5/12 top-10 z-0 text-white`}></div>
+      <div style={{ backgroundImage: "url(/pattern-circles.svg)" }} className={`absolute bg-cover bg-center w-[37vw] h-[17vh] md:w-[13vw] md:h-[26vh] left-5/12 md:top-10 top-16 z-0 text-white`}></div>
       <div className=" relative top-28 flex flex-col items-center justify-center z-10">
         <h1 className={`text-2xl font-extrabold ${isDarkMode ? "text-white" : "text-[hsl(227,35%,25%)]"}`}>Simple, traffic-based pricing</h1>
         <p className={`${isDarkMode ? "text-gray-400" : "text-[hsl(225,20%,60%)]"} flex flex-col md:flex-row items-center`}><span>Sign-up for our 30-day trial.</span><span> No credit card required.</span></p>
