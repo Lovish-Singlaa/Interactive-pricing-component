@@ -64,7 +64,7 @@ export default function Home() {
           </div>
 
         </div>
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-2 md:gap-4">
           <div>Monthly Billing</div>
           <Switch checked={isYearly} onCheckedChange={setIsYearly} className="data-[state=checked]:bg-[hsl(174,86%,45%)]"/>
           <div>Yearly Billing 
