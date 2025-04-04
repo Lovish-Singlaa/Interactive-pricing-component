@@ -28,25 +28,25 @@ export default function Home() {
   return (
     <div className={`relative h-screen font-semibold text-[15px] ${isDarkMode && "bg-gray-900"}`}>
       <Button onClick={()=>setIsDarkMode(!isDarkMode)} className={`rounded-full absolute right-0 m-2 z-10 ${isDarkMode ? "bg-gray-800 text-white" : "bg-gray-200 text-black hover:bg-gray-300"}`}>{isDarkMode ? <Moon/> : <Sun/>}</Button>
-      <div style={{ backgroundImage: !isDarkMode ? "url(/bg-pattern.svg)" : "" }} className={`absolute bg-cover bg-center w-full h-[50vh] z-0`}></div>
+      <div style={{ backgroundImage: !isDarkMode ? "url(/bg-pattern.svg)" : "" }} className={`absolute bg-cover md:bg-center w-full md:h-[50vh] h-[50vh] z-0`}></div>
       <div style={{ backgroundImage: "url(/pattern-circles.svg)" }} className={`absolute bg-cover w-[13vw] h-[26vh] left-5/12 top-10 z-0 text-white`}></div>
       <div className=" relative top-28 flex flex-col items-center justify-center z-10">
         <h1 className={`text-2xl font-extrabold ${isDarkMode ? "text-white" : "text-[hsl(227,35%,25%)]"}`}>Simple, traffic-based pricing</h1>
-        <p className={`${isDarkMode ? "text-gray-400" : "text-[hsl(225,20%,60%)]"}`}>Sign-up for our 30-day trial. No credit card required.</p>
+        <p className={`${isDarkMode ? "text-gray-400" : "text-[hsl(225,20%,60%)]"} flex flex-col md:flex-row items-center`}><span>Sign-up for our 30-day trial.</span><span> No credit card required.</span></p>
       </div>
 
       {/* Card */}
-      <div className={`p-3 relative ${isDarkMode ? "bg-gray-800 text-gray-400" : "bg-white text-[hsl(225,20%,60%)]"} top-1/4 mx-auto w-[100vh] h-[60vh] rounded-2xl shadow-xl hover:shadow-2xl`}>
-        <div className="flex justify-between items-center">
+      <div className={`p-3 relative ${isDarkMode ? "bg-gray-800 text-gray-400" : "bg-white text-[hsl(225,20%,60%)]"} md:top-1/4 top-1/4 mx-auto md:w-[100vh] w-[90vw] md:h-[60vh] min-h-[50vh] rounded-2xl shadow-xl hover:shadow-2xl`}>
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
           <div className="mt-5 ml-12">{currentTier.pageviews} PAGEVIEWS</div>
-          <div className="mt-5 mr-12 flex items-center gap-1">
+          <div className="mt-5 mr-12 flex justify-center items-center gap-1">
             <span className={`font-extrabold text-5xl ${isDarkMode ? "text-white" : "text-[hsl(227,35%,25%)]"}`}>
               ${finalPrice}.00
               </span>
               <span>/month</span>
           </div>
         </div>
-        <div className="relative mb-12 mt-8 flex justify-center w-[70%] mx-auto">
+        <div className="relative mb-12 mt-8 flex justify-center md:w-[70%] w-[90%] mx-auto">
           <input type="range"
             min="0"
             max={pricingTiers.length - 1}
@@ -67,16 +67,27 @@ export default function Home() {
         <div className="flex justify-center items-center gap-4">
           <div>Monthly Billing</div>
           <Switch checked={isYearly} onCheckedChange={setIsYearly} className="data-[state=checked]:bg-[hsl(174,86%,45%)]"/>
-          <div>Yearly Billing <span className="py-1 px-2 rounded-2xl" style={{ color: "hsl(15, 100%, 70%)", backgroundColor: "hsl(14, 92%, 95%)" }}>25% discount</span></div>
+          <div>Yearly Billing 
+            <span 
+              className="py-1 px-2 rounded-2xl" 
+              style={{ 
+                color: "hsl(15, 100%, 70%)", 
+                backgroundColor: "hsl(14, 92%, 95%)" 
+              }}
+            >
+              <span className="hidden sm:inline">25% discount</span>
+              <span className="sm:hidden">-25%</span>
+            </span>
+          </div>
         </div>
         <hr className="mt-10 mb-5 w-[85%] mx-auto"/>
-        <div className="flex justify-around gap-20">
+        <div className="flex flex-col md:flex-row justify-around md:gap-20 gap-8 items-center">
           <ul>
             <li className="flex gap-4"><Image src="/icon-check.svg" alt="icon-check" width={17} height={1}></Image><p>Unlimited websites</p></li>
             <li className="flex gap-4"><Image src="/icon-check.svg" alt="icon-check" width={17} height={1}></Image><p>100% data ownership</p></li>
             <li className="flex gap-4"><Image src="/icon-check.svg" alt="icon-check" width={17} height={1}></Image><p>Email reports</p></li>
           </ul>
-          <Button className={`rounded-full px-6 cursor-pointer ${isDarkMode ? "text-black bg-[hsl(174,86%,45%)] hover:bg-[hsl(174,75%,50%)]" : "text-[hsl(226,100%,87%)] bg-[hsl(227,35%,25%)] hover:bg-[hsl(227,60%,25%)]"}`}>Start my trial</Button>
+          <Button className={`rounded-full px-6 cursor-pointer mx-auto md:mx-1 ${isDarkMode ? "text-black bg-[hsl(174,86%,45%)] hover:bg-[hsl(174,75%,50%)]" : "text-[hsl(226,100%,87%)] bg-[hsl(227,35%,25%)] hover:bg-[hsl(227,60%,25%)]"}`}>Start my trial</Button>
         </div>
       </div>
     </div>
